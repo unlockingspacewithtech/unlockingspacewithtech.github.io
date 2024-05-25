@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+	  <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="fv.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap" rel="stylesheet">
+
+
+<style> 
+
+
+.parent {
+position: relative;
+top: 0;
+left: 0;
+}
+.image1 {
+position: relative;
+top: 0;
+left: 0;
+}
+.image2 {
+position: absolute;
+top: 0px;
+left: 0px;
+
+}
+
+body {
+overflow-y: hidden; 
+overflow-x: hidden; 
+margin: 0;
+height : 100%;
+background-image: url("rocket.png");
+}
+
+
+.image1{
+	animation-name: crack;
+	animation-duration: 3s;
+	animation-direction: reverse;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+  animation-play-state: paused;
+  animation-iteration-count: 1;
+}
+
+
+@keyframes crack
+{
+  0% {
+    transform: translateX(-500px);
+  }
+  
+}
+
+
+.image2{
+	animation-name: cracko;
+	animation-duration: 3s;
+	animation-direction: reverse;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+  animation-play-state: paused;
+  animation-iteration-count: 1;
+}
+
+
+@keyframes cracko
+{
+  0% {
+    transform: translateX(500px);
+  }
+  
+}
+
+
+.hide
+{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 75%;
+  transform: translate(-50%,-50%);
+  font-family: 'Stick No Bills', sans-serif;
+  font-size: 80px;
+  color: #02e6db;
+  text-align: center;
+}
+
+.hp
+{
+  position: absolute;
+  top: 70%;
+  left: 100%;
+  width: 75%;
+  transform: translate(-45%,30%);
+  font-family: 'Stick No Bills', sans-serif;
+  font-size: 25px;
+  color: #02e6db;
+}
+.fi i
+{
+  font-size: 100px;
+  color: #0298bd;
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="parent">
+<img class="image1" src="tabl.png" id="img1"/>
+<img class="image2" src="tabr.png" id="img2" />
+</div>
+
+<p class="hide" id="text">Be C.I.D.<br> Curious Ingenious Diligent <br> Are you ready?</p>
+<p class="hp" id="tx">Use headphones for best experience</p>
+<audio src="AudWelcome.mp3" id="audio"></audio>
+<button onclick="style.display='none'" type="button" class="play-sound-btn">Launch!</button>
+
+
+</body>
+
+
+
+<script>
+
+
+const soundBtn = document.querySelector('.play-sound-btn');
+let myAudio = document.querySelector('#audio');
+let text = document.getElementById("text");
+
+let text2 = document.getElementById("tx");
+
+soundBtn.addEventListener('click',()=>{
+  document.getElementById("img1").style.WebkitAnimationPlayState = "running";
+  document.getElementById("img2").style.WebkitAnimationPlayState = "running";
+myAudio.play();
+
+
+  text.classList.remove("hide");
+  setTimeout(function () {
+    text.classList.add("fade-in");
+  });
+
+    text2.classList.remove("hp");
+  setTimeout(function () {
+    text.classList.add("fade-in");
+  });
+
+window.setTimeout(function(){
+window.location.href = "loader.html";
+}, 7000);
+});
+
+
+
+
+</script>
+
+</html>

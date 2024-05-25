@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MARS</title>
+
+<link rel="shortcut icon" href="fv.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/09db3f7364.js" crossorigin="anonymous"></script>
+
+<style type="text/css">
+	
+body
+{
+	background-image: url("marsbg.png");
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+
+
+.center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+
+}
+
+
+#aSide 
+{
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top: calc(50% - 250px);
+    right: 2%;
+    
+}
+
+model-viewer {
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    top: 10vh;
+    left: 70vh;
+    border: none;
+}
+
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+img
+{
+	transform: translate(25%,180%);
+}
+
+.play-sound-btn{
+display: inline-block;
+padding: 12px 30px;
+background: none;
+color: #fff;
+font-size: 2em;
+transition: all 1s;
+cursor: pointer;
+border: 6px inset #fff;
+border-radius: 40px 40px 40px 40px;
+position: absolute;
+top: 600px;
+left: 720px;
+}
+
+</style>
+</head>
+
+<body>
+	<div id="aSide"></div>
+    <audio src="AudTopic.mp3" id="audio3"></audio>
+    <button onclick="style.display='none'" type="button" class="play-sound-btn">GO!</button>
+</body>
+
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+
+<script>    
+
+const soundBtn = document.querySelector('.play-sound-btn');
+let myAudio = document.querySelector('#audio3');
+
+soundBtn.addEventListener('click',()=>{
+  
+myAudio.play();
+
+window.setTimeout(function(){
+
+window.location.href = "connection.html";
+
+}, 5000);
+});</script>
+
+
+<model-viewer src="Curiosity.glb" alt="A 3D model of an astronaut" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate camera-controls class="center-fit"></model-viewer>
+
+</html>

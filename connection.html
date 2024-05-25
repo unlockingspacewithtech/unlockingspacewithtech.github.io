@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Investigating "Crime Scenes" On Mars</title>
+  <link rel="shortcut icon" href="fv.png">
+  <style type="text/css">
+    
+body
+{
+  
+  background: #000;
+  overflow-y: hidden; 
+        
+}
+
+::-webkit-scrollbar 
+{
+  width: 1px;
+}
+
+::-webkit-scrollbar-track 
+{
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb 
+{
+  background: #545454;
+  border-radius: 10px;
+}
+
+    .head-text
+{
+  
+
+  position:absolute;
+  z-index:9999999999;
+}
+
+.scroll{  
+position: fixed;
+bottom: 0;
+right: 600px;
+width: 20%;
+}
+
+.img1{
+position: absolute;
+bottom : 40px;
+right : 0px;
+margin:none;
+width:60%;
+z-index: 20000;
+}
+
+.img2{
+position: absolute;
+bottom : 40px;
+right : -2150px;
+margin:none;
+width:70%;
+z-index: 20001;
+}
+
+.img3{
+position: absolute;
+bottom : 40px;
+right : -4100px;
+margin:none;
+width:60%;
+z-index: 20002;
+}
+
+.aud_icon{
+position: absolute;
+top : 10;
+right : 0px;
+margin:none;
+width:20%;
+z-index: 20000;
+cursor: pointer;
+}
+
+.aud_icon2{
+position: absolute;
+top : 10;
+right : -2100px;
+margin:none;
+width:20%;
+z-index: 20001;
+cursor: pointer;
+}
+
+.aud_icon3{
+position: absolute;
+top : 10;
+right : -4100px;
+margin:none;
+width:20%;
+z-index: 20002;
+cursor: pointer;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+  </style>
+<script>
+function aud1(){
+  document.getElementById("audio1").play();
+}
+function aud2(){
+  document.getElementById("audio2").play();
+}
+function aud3(){
+  document.getElementById("audio3").play();
+}
+
+</script>
+
+</head>
+<body>
+<audio src="ATopic1.mp3" id="audio1"></audio>
+<audio src="ATopic2.mp3" id="audio2"></audio>
+<audio src="ATopic3.mp3" id="audio3"></audio>
+
+<img class="scroll" src="scroll.png">
+
+<div class="row">
+  <div class="column">
+      <img class="aud_icon" src="play.png" onclick="aud1()">
+      <img class="img1" src="Topic1.png">
+    <video autoplay muted loop class="myVideo" style="height:100%; ">
+  <source src="mars1.mp4" type="video/mp4">
+</video>
+    
+  </div>
+  <div class="column">
+      <img class="aud_icon2" src="play.png" onclick="aud2()">
+      <img class="img2" src="Topic2.png">
+    <video autoplay muted loop class="myVideo" style="height:100%;">
+  <source src="mars2.mp4" type="video/mp4">
+</video>
+    
+  </div>
+  <div class="column">
+    <img class="aud_icon3" src="play.png" onclick="aud3()">
+    <img class="img3" src="Topic3.png">
+    <video autoplay muted loop class="myVideo" style="height:100%;">
+  <source src="mars3.mp4" type="video/mp4">
+</video>
+    
+  </div>
+</div>
+  
+</body>
+</html>
