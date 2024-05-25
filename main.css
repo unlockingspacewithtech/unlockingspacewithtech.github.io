@@ -1,0 +1,15 @@
+.play-sound-btn{
+display: inline-block;
+padding: 12px 30px;
+background: none;
+color: #01FFDF;
+font-size: 2em;
+transition: all 1s;
+cursor: pointer;
+border: 6px inset #01FFDF;
+border-radius: 40px 40px 40px 40px;
+position: absolute;
+top: 500px;
+left: 720px;
+}
+
